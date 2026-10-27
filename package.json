@@ -1,0 +1,24 @@
+{
+  "name": "reactjs-as",
+  "version": "1.0.0",
+  "description": "react-revision",
+  "keywords": [],
+  "homepage": "https://github.com/ayushj-02/React-Revision-2.0#readme",
+  "bugs": {
+    "url": "https://github.com/ayushj-02/React-Revision-2.0/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayushj-02/React-Revision-2.0.git"
+  },
+  "license": "ISC",
+  "author": "Ayush Jain",
+  "type": "commonjs",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  }
+}
