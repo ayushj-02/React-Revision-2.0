@@ -1,3 +1,240 @@
-#heading {
-  color: red;
+:root {
+  --primary: #fc8019;
+  --primary-dark: #e46f0e;
+  --text: #282c3f;
+  --text-muted: #686b78;
+  --bg: #f7f7f9;
+  --card-bg: #ffffff;
+  --border: #e9e9eb;
+  --green: #1ba672;
+  --orange: #db7c38;
+  --radius: 1rem;
+  --shadow: 0 2px 8px rgba(40, 44, 63, 0.08);
+  --shadow-hover: 0 12px 24px rgba(40, 44, 63, 0.16);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family:
+    "Poppins",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+.logo img {
+  height: 4.5rem;
+  display: block;
+}
+
+.nav-items ul {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-items ul li {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    background-color 0.2s;
+
+  &:hover {
+    color: var(--primary);
+    background-color: #fff3e9;
+  }
+}
+
+/* Body */
+.body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.search {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+
+  input {
+    flex: 1;
+    max-width: 28rem;
+    padding: 0.75rem 1rem;
+    font: inherit;
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    outline: none;
+    background-color: var(--card-bg);
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
+
+    &:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(252, 128, 25, 0.15);
+    }
+  }
+
+  button {
+    padding: 0.75rem 1.5rem;
+    font: inherit;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: var(--primary-dark);
+    }
+  }
+}
+
+.section-title {
+  margin: 0 0 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.res-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Restaurant card */
+.res-card {
+  overflow: hidden;
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  &:hover .res-logo {
+    transform: scale(1.05);
+  }
+}
+
+.res-image-wrapper {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.res-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.res-info {
+  padding: 0.9rem 1rem 1.1rem;
+}
+
+.res-name {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.res-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.rating {
+  padding: 0.1rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--green);
+  border-radius: 0.4rem;
+
+  &.low {
+    background-color: var(--orange);
+  }
+}
+
+.res-cuisines,
+.res-cost {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.res-cost {
+  margin-top: 0.25rem;
+}
+
+/* Footer */
+.footer {
+  margin-top: 3rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #c4c4c8;
+  background-color: var(--text);
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-items ul li {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+  }
 }
